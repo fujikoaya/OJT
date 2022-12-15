@@ -1,0 +1,331 @@
+@charset "UTF-8";
+@media screen and (max-width: 767px) {
+  header {
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    border-bottom: ridge;
+  }
+}
+header .logo {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  header .logo {
+    display: block;
+    width: 25%;
+    margin: 10px auto;
+    z-index: 3;
+  }
+}
+header .logo img {
+  width: 100%;
+}
+header .nav .nav-list {
+  display: flex;
+  justify-content: end;
+  padding: 70px 0;
+}
+header .nav .nav-item {
+  padding-right: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  header .nav {
+    /*----------------------------
+    * アニメーション部分
+    *----------------------------*/
+    /* アニメーション前のメニューの状態 */
+    /* アニメーション後のメニューの状態 */
+    /* ハンバーガーアニメーション */
+    /* ここからハンバーガーメニューのアニメーション */
+  }
+  header .nav .nav-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    opacity: 0;
+  }
+  header .nav .nav-item {
+    width: 100%;
+    height: auto;
+    padding: 0.5em 1em;
+    text-align: center;
+    color: black;
+    box-sizing: border-box;
+  }
+  header .nav .nav-list {
+    transform: translateX(-100vw);
+    transition: all 0.3s linear;
+  }
+  header .nav .nav-list.is-active {
+    transform: translateY(0);
+    opacity: 90%;
+  }
+  header .nav .menu-trigger,
+header .nav .menu-trigger span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+  }
+  header .nav .menu-trigger {
+    position: fixed;
+    top: 70px;
+    margin-right: 20px;
+    right: 10px;
+    z-index: 2;
+    width: 24px;
+    height: 32px;
+    background: none;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  header .nav .menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+    border-radius: 4px;
+  }
+  header .nav .menu-trigger span:nth-of-type(1) {
+    top: 0px;
+  }
+  header .nav .menu-trigger span:nth-of-type(2) {
+    top: 9px;
+  }
+  header .nav .menu-trigger span:nth-of-type(3) {
+    bottom: 11px;
+  }
+  header .nav .menu-trigger span:nth-of-type(1) {
+    animation: menu-bar01 0.5s forwards;
+  }
+  @keyframes menu-bar01 {
+    0% {
+      transform: translateY(9px) rotate(45deg);
+    }
+    60% {
+      transform: translateY(9px) rotate(0);
+    }
+    85% {
+      transform: translateY(9px) rotate(0);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+  header .nav .menu-trigger span:nth-of-type(2) {
+    transition: all 0.25s 0.25s;
+    opacity: 1;
+  }
+  header .nav .menu-trigger span:nth-of-type(3) {
+    animation: menu-bar03 0.5s forwards;
+  }
+  @keyframes menu-bar03 {
+    0% {
+      transform: translateY(-9px) rotate(135deg);
+    }
+    60% {
+      transform: translateY(-9px) rotate(0);
+    }
+    85% {
+      transform: translateY(-9px) rotate(0);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+  header .nav .menu-trigger.active span:nth-of-type(1) {
+    animation: active-menu-bar01 0.5s forwards;
+  }
+  @keyframes active-menu-bar01 {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    70% {
+      transform: translateY(9px) rotate(0);
+    }
+    85% {
+      transform: translateY(9px) rotate(0);
+    }
+    100% {
+      transform: translateY(9px) rotate(405deg);
+    }
+  }
+  header .nav .menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  header .nav .menu-trigger.active span:nth-of-type(3) {
+    animation: active-menu-bar03 0.5s forwards;
+  }
+  @keyframes active-menu-bar03 {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    70% {
+      transform: translateY(-9px) rotate(0);
+    }
+    85% {
+      transform: translateY(-9px) rotate(0);
+    }
+    100% {
+      transform: translateY(-9px) rotate(495deg);
+    }
+  }
+}
+main {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+main #kv {
+  position: relative;
+  padding: 0 5.555556%;
+}
+@media screen and (max-width: 767px) {
+  main #kv {
+    padding: 29vw 0 0;
+  }
+}
+main #kv .posimg1 {
+  position: absolute;
+  z-index: 1;
+  width: 21.006944%;
+  top: -26.651982%;
+  left: 0;
+}
+@media screen and (max-width: 767px) {
+  main #kv .posimg1 {
+    display: none;
+  }
+}
+main #kv .posimg2 {
+  position: absolute;
+  z-index: 1;
+  top: 52%;
+  right: 3px;
+  left: unset;
+  width: 42.96875%;
+}
+@media screen and (max-width: 767px) {
+  main #kv .posimg2 {
+    top: 30vw;
+    right: unset;
+    width: 100%;
+  }
+}
+main #kv .mainvisual {
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+main #kv .slick-slider {
+  margin: 0;
+  padding: 0;
+}
+main #kv .slick-slider picture {
+  width: 100%;
+  height: 100%;
+}
+main .text {
+  font-size: 24px;
+  margin: 5px 0;
+}
+main .latest.article {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  main .latest.article {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+main h1 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+main .la {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+@media screen and (max-width: 767px) {
+  main .la {
+    display: block;
+  }
+}
+main .article-wrap {
+  width: 320px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  position: relative;
+}
+main .article-wrap .pic img {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  main .article-wrap {
+    width: 100%;
+  }
+}
+main .tr {
+  position: relative;
+}
+main .tr:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 25px;
+  /*線の長さ*/
+  height: 1px;
+  /*線の太さ*/
+  /*位置調整*/
+  background-color: black;
+  /*線の色*/
+  border-radius: 2px;
+  /*線の丸み*/
+  transition: width 0.3s ease-in-out;
+}
+main p {
+  padding: 10px 10px 0 10px;
+}
+main .readmore {
+  text-align: right;
+  padding: 150px 10px 0 0;
+}
+main .readmore1 {
+  text-align: right;
+  padding: 130px 10px 0 0;
+}
+
+.article-wrap:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1);
+  border-color: transparent;
+}
+.article-wrap:hover .tr:after {
+  width: 102px;
+}
+
+footer {
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 100px;
+}/*# sourceMappingURL=style.css.map */
